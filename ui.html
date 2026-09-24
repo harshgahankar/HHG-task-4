@@ -1,0 +1,732 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed":"#acedff","surface-dim":"#10131a","surface":"#10131a","surface-variant":"#32353d","inverse-surface":"#e1e2ec","surface-container-low":"#191b23","on-error-container":"#ffdad6","on-tertiary-fixed":"#001a42","surface-container-highest":"#32353d","on-primary-fixed":"#002022","primary-fixed-dim":"#00dce6","secondary-fixed-dim":"#4cd7f6","outline-variant":"#3a494b","on-background":"#e1e2ec","on-surface":"#e1e2ec","on-secondary":"#003640","on-primary":"#00373a","surface-bright":"#363941","secondary":"#4cd7f6","outline":"#849495","tertiary-container":"#cddbff","on-surface-variant":"#b9cacb","primary":"#e0fdff","on-tertiary-container":"#005cc5","on-tertiary-fixed-variant":"#004395","surface-container":"#1d1f27","on-secondary-fixed-variant":"#004e5c","surface-container-high":"#272a32","surface-container-lowest":"#0b0e15","on-primary-container":"#006a70","tertiary-fixed-dim":"#adc6ff","inverse-on-surface":"#2d3038","background":"#10131a","on-primary-fixed-variant":"#004f53","inverse-primary":"#00696f","tertiary":"#f7f7ff","primary-container":"#00f2fe","surface-tint":"#00dce6","error-container":"#93000a","on-error":"#690005","on-tertiary":"#002e6a","on-secondary-container":"#00424e","tertiary-fixed":"#d8e2ff","on-secondary-fixed":"#001f26","primary-fixed":"#6ff6ff","secondary-container":"#03b5d3","error":"#ffb4ab"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-sm":"0.5rem","space-md":"0.75rem","space-lg":"1rem",margin:"1rem","space-xs":"0.25rem",gutter:"0.75rem","space-xl":"1.5rem"},fontFamily:{"body-sm":["Geist"],"label-md":["JetBrains Mono"],"headline-xl":["Geist"],"body-lg":["Geist"],"label-lg":["JetBrains Mono"],"headline-xl-mobile":["Geist"],"headline-sm":["Geist"],"label-sm":["JetBrains Mono"],"body-md":["Geist"],"headline-lg":["Geist"]},fontSize:{"body-sm":["0.75rem",{lineHeight:"1.1rem",fontWeight:"400"}],"label-md":["0.6875rem",{lineHeight:"1rem",letterSpacing:"0.04em",fontWeight:"500"}],"headline-xl":["2rem",{lineHeight:"2.5rem",letterSpacing:"-0.025em",fontWeight:"600"}],"body-lg":["0.9375rem",{lineHeight:"1.45rem",letterSpacing:"-0.01em",fontWeight:"400"}],"label-lg":["0.8125rem",{lineHeight:"1.2rem",letterSpacing:"0.02em",fontWeight:"500"}],"headline-xl-mobile":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["0.625rem",{lineHeight:"0.875rem",letterSpacing:"0.06em",fontWeight:"600"}],"body-md":["0.8125rem",{lineHeight:"1.25rem",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-fixed" style="font-family: &quot;Plus Jakarta Sans&quot;, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30 select-none"><div class="flex flex-col"><div class="h-14 px-space-md flex items-center gap-space-sm border-b border-outline-variant/30 bg-surface-container-lowest"><img alt="Sentinel GraphTrace Emblem" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UhwKw-2d_WbvaezlSWiwmrVnlVdBfKZn31xg2EXNw26r0gPgB6DZcnro8BcebjMPFUg6Z5YZLVAfjKNeYOkgCHKek7d8UpAkzwh7SHOLkLBvvgXVIsI8hWs-KW_M3FewwME86ecq-IubbK-X9n1lVcXK1rm60NPc5Z4p4jaTDhRVuDwDAR8LGRdDjfFGeYNKZPxYGvuG5PwX5tb5_dQdtw2XGWvkshuEENb9K9sxWa7vWQW9FjCEZPy0I"><div class="flex flex-col"><span class="font-label-md text-label-md tracking-wider text-primary uppercase font-bold">SENTINEL</span><span class="font-label-sm text-label-sm tracking-widest text-on-surface-variant">GRAPHTRACE v2.4</span></div></div><div class="px-space-md py-space-sm"><div class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs">Operations Workspace</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[inset_2px_0_0_0_#00f2fe]"><a aria-current="page" class="group flex items-center justify-between px-space-sm py-2 rounded transition-colors bg-surface-container-high text-primary font-bold shadow-[inset_2px_0_0_0_#00f2fe]" data-path="investigate" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px] text-secondary">radar</span><span class="font-label-md text-label-md uppercase tracking-wide">Investigate</span></div><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cases" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-label-md text-label-md uppercase tracking-wide">Cases</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-outline-variant/50">14 OPEN</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="approvals" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_circle</span><span class="font-label-md text-label-md uppercase tracking-wide">Approvals</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-amber-400 border border-amber-500/40">3 PEND</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="memory-patterns" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">hub</span><span class="font-label-md text-label-md uppercase tracking-wide">Memory &amp; Patterns</span></div><span class="font-label-sm text-label-sm text-outline">5+2</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-log" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-md text-label-md uppercase tracking-wide">Audit Log</span></div><span class="material-symbols-outlined text-[14px] text-outline">lock</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="policy-matrix" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">policy</span><span class="font-label-md text-label-md uppercase tracking-wide">Policy Matrix</span></div><span class="font-label-sm text-label-sm text-primary">GSQL</span></a></nav></div></div><div class="px-space-md py-space-sm border-t border-outline-variant/30 flex flex-col gap-1"><div class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs">Developer Tooling</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-surface-container-high text-primary"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="design-system" href="#"><span class="material-symbols-outlined text-[18px]">palette</span><span class="font-label-md text-label-md">Design System / Tokens</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="api-mcp-docs" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-label-md text-label-md">API &amp; MCP Docs</span></a></nav><div class="mt-2 pt-2 border-t border-outline-variant/20 flex items-center justify-between text-outline px-space-xs"><span class="font-label-sm text-label-sm uppercase">TG CLUSTER NODE</span><span class="font-label-sm text-label-sm text-primary-container">us-east-cluster-04</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2"><span class="font-label-md text-label-md uppercase font-bold text-on-surface">Sentinel / GraphTrace</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-container/20 text-primary-fixed-dim border border-primary-container/40 uppercase tracking-widest">v2.4-mcp</span></div><div class="h-4 w-px bg-outline-variant/40 hidden xl:block"></div><div class="hidden xl:flex items-center gap-2"><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant/30"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 -ml-2.5"></span><span class="font-label-sm text-label-sm text-on-surface-variant">TigerGraph Engine 3.10 Connected</span></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant/30"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span><span class="font-label-sm text-label-sm text-secondary">MCP GraphRAG Active</span></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span><span class="font-label-sm text-label-sm text-amber-300 font-semibold">Mock SSE Simulator: ON</span></div></div></div><div class="flex-1 max-w-xl mx-space-lg hidden lg:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full h-8 pl-9 pr-12 rounded bg-surface-container-low border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container transition-all" placeholder="Cmd + K to search cases, entities, GSQL queries, or run commands..." type="text"><kbd class="absolute right-2 font-label-sm text-label-sm bg-surface-container-highest px-1.5 py-0.5 rounded border border-outline-variant text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container border border-outline-variant/40 cursor-pointer hover:border-secondary transition-all"><span class="material-symbols-outlined text-[16px] text-secondary">play_circle</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Guided Demo</span></div><div class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-low border border-outline-variant/30 text-outline"><span class="material-symbols-outlined text-[14px] text-emerald-400">speed</span><span class="font-label-sm text-label-sm text-on-surface">24ms</span></div><button class="h-8 w-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-all"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><div class="h-5 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right hidden sm:block"><span class="font-label-md text-label-md text-on-surface font-semibold">Agent Handler: S. Chen</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-mono">L3 Lead Investigator</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-1 ring-primary-container/40"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-14 pb-8 w-full min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- TOP INVESTIGATION HEADER & MISSION CONTROL STRIP -->
+<div class="bg-surface-container-lowest px-space-md py-space-sm shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+          CRITICAL TIER-1
+        </span>
+<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight truncate flex items-center gap-2"><span class="font-bold tracking-tight text-primary">CASE-2025-8841: Synthetic Identity &amp; Rapid Layering Ring</span><span class="font-mono text-label-md text-secondary tracking-normal bg-surface-container-high px-2.5 py-0.5 rounded border border-outline-variant/40 font-semibold">$284,500.00 USD <span class="text-outline text-[11px]">(FEDWIRE)</span></span></h1>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="h-8 px-space-md rounded bg-primary-container text-on-primary-fixed font-label-md text-label-md uppercase tracking-wide flex items-center gap-1.5 hover:opacity-95 shadow-sm transition-all active:scale-95" id="btn-run-sse">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="">Re-Run SSE Stream</span>
+<kbd class="ml-1 px-1 py-0.2 rounded bg-on-primary-fixed/15 font-label-sm text-label-sm">SPACE</kbd>
+</button>
+<button class="h-8 px-space-md rounded bg-surface-container-high text-secondary font-label-md text-label-md uppercase tracking-wide flex items-center gap-1.5 hover:bg-surface-bright shadow-sm transition-all" id="btn-trigger-push">
+<span class="material-symbols-outlined text-[16px]">security_update_warning</span>
+<span class="">Push Challenge</span>
+</button>
+<button class="h-8 px-space-md rounded bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wide flex items-center gap-1.5 hover:text-on-surface hover:bg-surface-bright shadow-sm transition-all">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span class="">Export SAR Draft</span>
+</button>
+<button class="h-8 px-space-md rounded bg-error-container/30 text-error font-label-md text-label-md uppercase tracking-wide flex items-center gap-1.5 hover:bg-error-container hover:text-on-error-container shadow-sm transition-all">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="">Emergency Freeze</span>
+<span class="font-label-sm text-label-sm text-error/80">[SEC-991]</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Ribbon -->
+<div class="flex flex-wrap items-center gap-2 pt-2 text-on-surface-variant">
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded text-on-surface font-label-sm text-label-sm">
+<span class="text-outline">TRIGGER:</span>
+<span class="text-secondary font-semibold">High-Velocity Mule Layering</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded text-on-surface font-label-sm text-label-sm">
+<span class="text-outline">PATTERN:</span>
+<span class="text-primary font-semibold">4-Hop Ring Dispersion</span>
+<span class="text-primary-fixed-dim bg-surface-container-highest px-1 py-0.2 rounded">94.2% GSQL Match</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded text-on-surface font-label-sm text-label-sm">
+<span class="text-outline">ASSIGNED:</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">smart_toy</span>
+          Autonomous Agent Sentinel-7 (L3)
+        </span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded text-on-surface font-label-sm text-label-sm">
+<span class="text-outline">STATUS:</span>
+<span class="text-amber-400 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          RE-ASSESSED (NEW EVIDENCE ARRIVED)
+        </span>
+</div>
+<div class="ml-auto flex items-center gap-2 font-label-sm text-label-sm text-outline">
+<span class="">SESSION ID: #TG-TRACE-99021</span>
+<span class="">•</span>
+<span class="text-primary-fixed-dim">MCP SERVER: RUNNING</span>
+</div>
+</div>
+</div>
+<!-- 3-COLUMN CORE WORKBENCH -->
+<div class="p-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- ========================================== -->
+<!-- COLUMN 1: TRIGGER & INPUT STREAM (LEFT)   -->
+<!-- ========================================== -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Trigger Source & Target Card -->
+<div class="bg-surface-container-low rounded p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Input Stream Control</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-1.5 py-0.5 rounded">REAL-TIME</span>
+</div>
+<!-- Mode Selectors -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded">
+<button class="py-1 px-2 text-center rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-semibold transition-all">
+            Risk Signal
+          </button>
+<button class="py-1 px-2 text-center rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all">
+            Customer
+          </button>
+<button class="py-1 px-2 text-center rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all">
+            Manual
+          </button>
+</div>
+<!-- Entity Target Input Box -->
+<div class="bg-surface-container-lowest rounded p-space-sm flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Target Entity Vector</label>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">ACC_88491_CYBER_MULE</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pt-1">
+<span class="">TX_9921_0442</span>
+<span class="text-error font-semibold">$284,500.00 (Wire Out)</span>
+</div>
+</div>
+<!-- Velocity & Anomaly Indicators -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm"><span class="text-outline uppercase tracking-wider font-medium text-[11px]">Risk Velocity Metric</span><span class="text-error font-mono font-bold tracking-wider text-[12px] bg-error-container/20 px-2 py-0.5 rounded border border-error/20">89 / 100 [EXTREME]</span></div>
+<!-- Inline Sparkline SVG Chart -->
+<div class="w-full bg-surface-container-lowest rounded p-2 flex items-end justify-between h-14">
+<svg class="w-full h-full text-secondary" fill="none" preserveAspectRatio="none" viewBox="0 0 200 40">
+<path d="M0 35 L20 32 L40 34 L60 30 L80 28 L100 22 L120 25 L140 12 L160 8 L180 5 L200 2" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="160" cy="8" fill="#ffb4ab" r="3"></circle>
+<circle class="animate-ping" cx="200" cy="2" fill="#00f2fe" r="3.5"></circle>
+</svg>
+</div>
+<div class="flex flex-col gap-1.5 font-label-sm text-label-sm text-on-surface-variant pt-1">
+<div class="flex items-center justify-between bg-surface-container px-2 py-1 rounded">
+<span class="text-outline">GEO DRIFT:</span>
+<span class="text-on-surface font-mono">Lagos → Frankfurt (VPN)</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container px-2 py-1 rounded">
+<span class="text-outline">DEVICE FINGERPRINT:</span>
+<span class="text-secondary font-mono">#df84...c902 [NEW]</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container px-2 py-1 rounded">
+<span class="text-outline">PRE-AUTH ATTEMPTS:</span>
+<span class="text-amber-400 font-mono">3 PIN Fails (02:10 AM)</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 px-space-md rounded bg-surface-container-high hover:bg-surface-bright text-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="">SSE Agent Loop Active</span>
+</button>
+</div>
+<!-- Live Incoming Triggers Queue -->
+<div class="bg-surface-container-low rounded p-space-md shadow-md flex flex-col gap-space-sm flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">stream</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">High-Risk Trigger Queue</span>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-outline">3 QUEUED</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Item 1 (Selected) -->
+<div class="bg-surface-container-high rounded p-space-sm flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-label-md text-label-md text-primary font-bold">ACC_88491 (CURRENT)</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/40 text-error font-mono font-bold">96 CRIT</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+<span class="">Fedwire Layering Ring</span>
+<span class="text-primary font-mono">$284.5k</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm pt-1">
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+<span class="">Re-assessing via TigerGraph 4-Hop...</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container rounded p-space-sm flex flex-col gap-1 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold">TX_8819_STRUCTURE</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/20 text-error font-mono">84 CRIT</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+<span class="">ATM Smurfing Dispersion</span>
+<span class="text-on-surface font-mono">$92,400</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Triggered 4m ago • Ingestion Pipeline</span>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container rounded p-space-sm flex flex-col gap-1 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold">ID_4102_SYNTH</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/20 text-error font-mono">91 CRIT</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+<span class="">Stolen SSN Synthetic Burst</span>
+<span class="text-on-surface font-mono">5 Cards</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Triggered 9m ago • Experian MCP</span>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container rounded p-space-sm flex flex-col gap-1 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold">MERCH_339_CNP</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-amber-400 font-mono">62 MED</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+<span class="">Card-Not-Present Wash</span>
+<span class="text-on-surface font-mono">$18,200</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Triggered 14m ago • Stripe Webhook</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 2: LIVE AGENT TRACE & STEPPER      -->
+<!-- ========================================== -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-low rounded p-space-md shadow-md flex flex-col gap-space-md">
+<!-- Trace Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Autonomous Agentic Loop</span>
+<span class="font-label-sm text-label-sm text-outline">STATE MACHINE EXECUTION TRACE • 6 STEPS RECORDED</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-mono">TG-MCP: CONNECTED</span>
+</div>
+</div>
+<!-- Vertical Stepper Container -->
+<div class="flex flex-col gap-3 relative">
+<!-- Step 1 -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-surface-container-highest text-secondary flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                1
+              </div>
+<div class="w-0.5 flex-1 bg-surface-container-highest my-1"></div>
+</div>
+<div class="flex-1 bg-surface-container rounded p-space-sm shadow-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-bold tracking-wide">TRIGGER CAPTURED</span>
+<span class="text-outline font-mono">14:02:11.020 (12ms)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1">
+                Real-time Kafka ingestion sink registered anomalous $284,500 wire departure to offshore IBAN (Frankfurt).
+              </p>
+</div>
+</div>
+<!-- Step 2: Knowledge Graph Traversal -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-primary-container text-on-primary-fixed flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                2
+              </div>
+<div class="w-0.5 flex-1 bg-surface-container-highest my-1"></div>
+</div>
+<div class="flex-1 bg-surface-container rounded p-space-sm shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-primary font-bold tracking-wide">KNOWLEDGE GRAPH TRAVERSAL</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary">TIGERGRAPH GSQL</span>
+</div>
+<span class="text-outline font-mono">14:02:11.450 (84ms)</span>
+</div>
+<!-- Code block -->
+<div class="bg-surface-container-lowest rounded p-2 text-on-surface font-label-sm text-label-sm font-mono overflow-x-auto">
+<div class="text-outline-variant">// MCP Tool: TigerGraphQueryEngine.execute()</div>
+<div class=""><span class="text-secondary">RUN QUERY</span> <span class="text-primary-container">findFraudRingNeighborhood</span>(</div>
+<div class="pl-4">targetVertex=<span class="text-amber-300">"ACC_88491"</span>, maxHops=<span class="text-secondary-fixed">3</span>, minSharedRisk=<span class="text-secondary-fixed">0.75</span></div>
+<div class="">);</div>
+</div>
+<div class="bg-surface-container-high rounded p-2 font-body-sm text-body-sm text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-2 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">hub</span>
+<span class="">Results: 28 Linked Accounts • 3 Shared MACs • 1 Compromised Tax ID</span>
+</div>
+<div class="flex flex-wrap gap-1 pt-1 font-label-sm text-label-sm">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary">[Node: ACC_88491]</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary">[Node: DEV_MULE_9]</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-error">[Cluster: RING_B_FRANKFURT]</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Initial Uncertainty Assessment -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-surface-container-highest text-amber-400 flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                3
+              </div>
+<div class="w-0.5 flex-1 bg-surface-container-highest my-1"></div>
+</div>
+<div class="flex-1 bg-surface-container rounded p-space-sm shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-bold tracking-wide">UNCERTAINTY BOUND EVALUATION</span>
+<span class="text-outline font-mono">14:02:11.900 (45ms)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest text-amber-300 font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-400 shrink-0">psychology_alt</span>
+<span class="">
+                  High probability of coordinated mule ring, but <strong class="text-on-surface">UNCERTAIN</strong> whether account owner was social-engineered victim or co-conspirator. <em>Epistemic Uncertainty: 48%</em>.
+                </span>
+</div>
+</div>
+</div>
+<!-- Step 4: Out-of-band Evidence Request & Interactive Controls -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                4
+              </div>
+<div class="w-0.5 flex-1 bg-surface-container-highest my-1"></div>
+</div>
+<div class="flex-1 bg-surface-container-high rounded p-space-sm shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-primary font-bold tracking-wide">ACTIVE MITIGATION: PUSH CHALLENGE</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-primary-fixed">MCP TWILIO</span>
+</div>
+<span class="text-outline font-mono">14:02:12.110</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Triggered Out-of-Band Biometric Push to verified hardware token <span class="font-mono text-secondary">(+1-***-**49)</span>.
+              </p>
+<!-- Interactive Simulator Control Buttons -->
+<div class="bg-surface-container-lowest p-2 rounded flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Simulate Live Customer Response:</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
+<button class="py-1.5 px-2 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 hover:opacity-90 shadow-sm transition-all" id="sim-denied">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span class="">Customer Denied Tx</span>
+</button>
+<button class="py-1.5 px-2 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 hover:bg-surface-bright transition-all" id="sim-approved">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="">Customer Approved</span>
+</button>
+<button class="py-1.5 px-2 rounded bg-surface-container text-outline font-label-sm text-label-sm flex items-center justify-center gap-1 hover:bg-surface-bright transition-all" id="sim-timeout">
+<span class="material-symbols-outlined text-[14px]">timer_off</span>
+<span class="">Timeout (No Ans)</span>
+</button>
+</div>
+</div>
+<div class="bg-error-container/20 rounded p-2 flex items-center gap-2" id="sim-response-banner">
+<span class="material-symbols-outlined text-error text-[18px]">gpp_bad</span>
+<div class="font-body-sm text-body-sm text-error">
+<span class="font-semibold">Customer response:</span> "I did not initiate this $284k wire to Frankfurt!" → <span class="font-bold underline">CONFIRMED ACCOUNT TAKEOVER (ATO)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 5: Diff Generation & Re-assessment -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                5
+              </div>
+<div class="w-0.5 flex-1 bg-surface-container-highest my-1"></div>
+</div>
+<div class="flex-1 bg-surface-container rounded p-space-sm shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-bold tracking-wide">POST-EVIDENCE RE-ASSESSMENT &amp; ENTROPY COLLAPSE</span>
+<span class="text-outline font-mono">14:02:13.004 (32ms)</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between pt-1">
+<span class="">Uncertainty dropped from <span class="text-amber-400 font-mono">48%</span> → <strong class="text-emerald-400 font-mono">3.2%</strong></span>
+<span class="text-primary font-mono font-bold bg-surface-container-highest px-2 py-0.5 rounded">RAG-CONF: 98.7%</span>
+</div>
+</div>
+</div>
+<!-- Step 6: Action Execution & Policy Routing -->
+<div class="flex gap-space-sm group">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center text-label-sm font-label-sm font-bold shadow-sm">
+                6
+              </div>
+</div>
+<div class="flex-1 bg-surface-container rounded p-space-sm shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-bold tracking-wide">POLICY ENFORCEMENT &amp; DUAL-KEY ROUTING</span>
+<span class="text-outline font-mono">14:02:13.410 (Auto)</span>
+</div>
+<div class="flex flex-col gap-1.5 font-label-sm text-label-sm">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check</span>
+                    Wire Out Freeze Executed (`DE89...3301`)
+                  </span>
+<span class="text-secondary font-mono">POLICY SEC-702</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-lowest">
+<span class="text-amber-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-400">pending</span>
+                    SAR Draft awaiting L3 Dual-Key Approval
+                  </span>
+<span class="text-amber-400 font-mono">AGENT SENTINEL-7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 3: CASE REASONING & DIFF RAIL      -->
+<!-- ========================================== -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Live Calibrated Gauges Card -->
+<div class="bg-surface-container-low rounded p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Autonomous Confidence Telemetry</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">ENTROPY: LOW (0.06)</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center"><div class="bg-surface-container rounded p-2.5 flex flex-col items-center justify-center border border-outline-variant/20"><span class="font-label-sm text-outline tracking-wider uppercase font-semibold text-[11px]">RISK SCORE</span><div class="font-mono font-bold text-headline-lg text-error tracking-tight my-0.5">96</div><span class="font-mono font-semibold text-label-sm text-error/90 uppercase tracking-widest text-[10px] bg-error-container/30 px-1.5 py-0.2 rounded">CRITICAL</span></div><div class="bg-surface-container rounded p-2.5 flex flex-col items-center justify-center border border-outline-variant/20"><span class="font-label-sm text-outline tracking-wider uppercase font-semibold text-[11px]">AGENT CONF</span><div class="font-mono font-bold text-headline-lg text-primary-container tracking-tight my-0.5">98.7%</div><span class="font-mono font-semibold text-label-sm text-secondary uppercase tracking-widest text-[10px] bg-primary-container/20 px-1.5 py-0.2 rounded">CALIBRATED</span></div><div class="bg-surface-container rounded p-2.5 flex flex-col items-center justify-center border border-outline-variant/20"><span class="font-label-sm text-outline tracking-wider uppercase font-semibold text-[11px]">UNCERTAINTY</span><div class="font-mono font-bold text-headline-lg text-emerald-400 tracking-tight my-0.5">3.2%</div><span class="font-mono font-semibold text-label-sm text-emerald-400 uppercase tracking-widest text-[10px] bg-emerald-500/10 px-1.5 py-0.2 rounded">RESOLVED</span></div></div>
+<!-- Evidence Sufficiency Stopping Rule Bar -->
+<div class="flex flex-col gap-1 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Information Gain Stopping Rule</span>
+<span class="text-primary font-mono">0.94 / 0.85 TARGET (STOPPED)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 94%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="">MCP Tool Budget: 4/6 used</span>
+<span class="">Entropy plateau reached</span>
+</div>
+</div>
+</div>
+<!-- SIGNATURE COMPONENT: RECOMMENDATION DIFF (STAGE 1 BEFORE vs STAGE 2 AFTER) -->
+<div class="bg-surface-container-low rounded p-space-md shadow-md flex flex-col gap-space-sm flex-1">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">difference</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Recommendation Diff</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary-container font-mono">
+            EVIDENCE-DRIVEN DELTA
+          </span>
+</div>
+<!-- Stage 1 (Before Challenge) Card -->
+<div class="bg-surface-container rounded p-space-sm opacity-70 flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-outline uppercase font-mono">STAGE 1: PRE-CHALLENGE</span>
+<span class="text-outline font-mono">14:02:11.900</span>
+</div>
+<div class="font-semibold text-[15px] text-on-surface line-through decoration-error tracking-tight">Soft Hold 24h &amp; Analyst Phone Review</div>
+<div class="flex items-center gap-3 font-label-sm text-label-sm text-outline pt-1">
+<span class="">Confidence: <strong class="text-amber-300 font-mono">54%</strong></span>
+<span class="">Risk Tier: <strong class="text-amber-300 font-mono">72 (Med-High)</strong></span>
+<span class="">Queue: Standard</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline pt-1 italic">
+            "High risk telemetry observed, but lacked definitive ATO signal vs legitimate high-net-worth real estate wire."
+          </p>
+</div>
+<!-- Transition Vector Arrow -->
+<div class="flex items-center justify-center gap-2 py-0.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">south</span>
+<span class="font-label-sm text-label-sm uppercase font-mono tracking-widest text-primary-container">
+            +44.7% CONFIDENCE GAIN POST-PUSH
+          </span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</div>
+<!-- Stage 2 (After Challenge & Graph 2-Hop) Card -->
+<div class="bg-surface-container-high rounded p-space-sm shadow-md flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-primary-fixed uppercase font-mono font-bold">
+              STAGE 2: POST-RESPONSE &amp; GRAPH CORRELATION
+            </span>
+<span class="text-emerald-400 font-mono font-semibold">14:02:13.410</span>
+</div>
+<div class="text-[15px] font-bold text-primary flex items-center gap-2 tracking-tight"><span class="material-symbols-outlined text-error text-[20px]">dangerous</span><span class="tracking-wide">HARD FREEZE &amp; AUTO-FILE SAR</span></div>
+<div class="flex flex-wrap items-center gap-2 font-label-sm text-label-sm pt-1">
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-emerald-400 font-mono">
+              CONFIDENCE: 98.7%
+            </span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-error font-mono font-bold">
+              RISK: 96 (CRITICAL)
+            </span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-secondary font-mono">
+              ROUTING: DUAL-KEY L3
+            </span>
+</div>
+<div class="bg-surface-container-lowest rounded p-space-sm flex flex-col gap-1 text-on-surface">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-semibold">Why It Changed:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Customer confirmed denial via out-of-band biometric challenge. TigerGraph 2-hop traversal revealed IP <span class="font-mono text-error">185.220.101.4</span> is a confirmed Tor exit node linked to 6 active mule accounts across 3 sister institutions.
+            </p>
+</div>
+</div>
+<!-- Approver Quick Action -->
+<div class="pt-2 flex gap-2">
+<button class="flex-1 py-2 px-space-md rounded bg-primary-container text-on-primary-fixed font-label-md text-label-md uppercase tracking-wide font-bold hover:opacity-90 shadow-sm transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span class="">Approve SAR &amp; Confirm Freeze</span>
+</button>
+<button class="px-space-md py-2 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LOWER TABBED WORKSPACE & VISUALIZER       -->
+<!-- ========================================== -->
+<div class="px-space-md pb-space-lg flex flex-col gap-space-sm">
+<!-- Visualizer Tabs Bar -->
+<div class="bg-surface-container-low rounded p-1 flex flex-wrap items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-1 overflow-x-auto">
+<button class="px-space-md py-1.5 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-2 font-semibold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="">TigerGraph Subgraph Visualizer (Interactive)</span>
+</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span class="">Evidence Dossier</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-1.5 py-0.2 rounded text-outline">12</span>
+</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span class="">Full Case Timeline</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-1.5 py-0.2 rounded text-outline">16</span>
+</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span class="">Similar Past Cases</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-1.5 py-0.2 rounded text-secondary">3 Matches</span>
+</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">contract_edit</span>
+<span class="">SAR Document Preview</span>
+</button>
+</div>
+<!-- Graph Toolbar HUD -->
+<div class="flex items-center gap-2 px-space-sm text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-outline font-mono">LAYOUT: FCOSE-GRAPH</span>
+<div class="flex items-center bg-surface-container rounded p-0.5">
+<button class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">zoom_in</span></button>
+<button class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">zoom_out</span></button>
+<button class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">filter_center_focus</span></button>
+</div>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span class="">Filter Suspicious</span>
+</button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+<span class="">Expand 2-Hops</span>
+</button>
+</div>
+</div>
+<!-- Active Visualizer Viewport Canvas Area -->
+<div class="w-full bg-surface-container-lowest rounded p-space-md shadow-xl relative min-h-[380px] overflow-hidden flex flex-col justify-between">
+<!-- Graph Canvas Overlays / Legend HUD -->
+<div class="absolute top-4 left-4 z-10 bg-surface-container-low/90 backdrop-blur-md p-space-sm rounded shadow-md flex flex-col gap-2 max-w-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Subgraph Entity Topology</span>
+<div class="grid grid-cols-2 gap-x-3 gap-y-1 font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span><span class="text-on-surface">Victim (ACC_88491)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-primary-container"></span><span class="text-on-surface">Mule Accounts (4)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-purple-400 rotate-45"></span><span class="text-on-surface">Wire Tx ($284k)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-emerald-400"></span><span class="text-on-surface">Device (DEV_MULE)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-error"></span><span class="text-on-surface">Tor Exit Node</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-amber-400"></span><span class="text-on-surface">Beneficiary IBAN</span></div>
+</div>
+</div>
+<!-- Graph Canvas SVG (Interactive Topology Simulation) -->
+<div class="w-full h-80 relative flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewBox="0 0 900 320">
+<defs>
+<linearGradient id="edge-grad-red" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#ffb4ab" stop-opacity="0.9"></stop>
+</linearGradient>
+<linearGradient id="edge-grad-normal" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#3a494b" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#00f2fe" stop-opacity="0.6"></stop>
+</linearGradient>
+</defs>
+<!-- Connecting Multi-Hop Edges -->
+<line stroke="url(#edge-grad-normal)" stroke-dasharray="4 2" stroke-width="2" x1="160" x2="320" y1="160" y2="100"></line>
+<line stroke="url(#edge-grad-normal)" stroke-width="2" x1="160" x2="320" y1="160" y2="220"></line>
+<!-- Layering Wire Line (High Risk Path) -->
+<line class="animate-pulse" stroke="url(#edge-grad-red)" stroke-width="3.5" x1="320" x2="520" y1="100" y2="130"></line>
+<line stroke="url(#edge-grad-normal)" stroke-width="1.5" x1="320" x2="520" y1="220" y2="130"></line>
+<line stroke="#ffb4ab" stroke-width="3" x1="520" x2="720" y1="130" y2="90"></line>
+<line stroke="url(#edge-grad-normal)" stroke-width="1.5" x1="520" x2="720" y1="130" y2="210"></line>
+<line stroke="#ffb4ab" stroke-dasharray="5 3" stroke-width="3" x1="720" x2="840" y1="90" y2="150"></line>
+<!-- Subgraph Aura / Ring Pulse around Fraud Cluster -->
+<circle class="animate-ping" cx="520" cy="130" fill="#ffb4ab" fill-opacity="0.08" r="48"></circle>
+<circle cx="720" cy="90" fill="#ffb4ab" fill-opacity="0.1" r="42"></circle>
+<!-- Node 1: Victim Account (ACC_88491) -->
+<g class="cursor-pointer group">
+<circle cx="160" cy="160" fill="#191b23" r="22" stroke="#00f2fe" stroke-width="2"></circle>
+<circle cx="160" cy="160" fill="#00f2fe" fill-opacity="0.3" r="14"></circle>
+<text fill="#e0fdff" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle" x="160" y="196">ACC_88491 (Target)</text>
+<text fill="#849495" font-family="Geist" font-size="8.5" text-anchor="middle" x="160" y="208">Bal: $341.2k</text>
+</g>
+<!-- Node 2: Mobile Device Fingerprint -->
+<g class="cursor-pointer">
+<rect fill="#191b23" height="28" rx="4" stroke="#4cd7f6" stroke-width="2" width="28" x="306" y="86"></rect>
+<text fill="#acedff" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="320" y="126">DEV_MULE_9</text>
+<text fill="#849495" font-family="Geist" font-size="8" text-anchor="middle" x="320" y="137">Shared 3 Accs</text>
+</g>
+<!-- Node 3: Secondary Layering Account -->
+<g class="cursor-pointer">
+<circle cx="320" cy="220" fill="#191b23" r="18" stroke="#3a494b" stroke-width="2"></circle>
+<circle cx="320" cy="220" fill="#03b5d3" r="9"></circle>
+<text fill="#b9cacb" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="320" y="250">ACC_3309</text>
+</g>
+<!-- Node 4: Wire Transfer Vertex (Crucial Tx) -->
+<g class="cursor-pointer">
+<rect fill="#93000a" height="36" rx="8" stroke="#ffb4ab" stroke-width="2.5" width="36" x="502" y="112"></rect>
+<text fill="#ffffff" font-family="Material Symbols Outlined" font-size="12" text-anchor="middle" x="520" y="134">payments</text>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle" x="520" y="162">TX_9921 ($284.5k)</text>
+<text fill="#ffb4ab" font-family="Geist" font-size="8.5" text-anchor="middle" x="520" y="174">Fedwire to DE IBAN</text>
+</g>
+<!-- Node 5: Tor IP Exit Node (Critical Red) -->
+<g class="cursor-pointer">
+<polygon fill="#93000a" points="720,70 738,80 738,100 720,110 702,100 702,80" stroke="#ffb4ab" stroke-width="2"></polygon>
+<text fill="#ffffff" font-family="Material Symbols Outlined" font-size="11" text-anchor="middle" x="720" y="94">vpn_lock</text>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle" x="720" y="124">185.220.101.4 (Tor)</text>
+<text fill="#849495" font-family="Geist" font-size="8" text-anchor="middle" x="720" y="135">Known Fraud Exit</text>
+</g>
+<!-- Node 6: Destination Ring Beneficiary -->
+<g class="cursor-pointer">
+<rect fill="#191b23" height="28" rx="2" stroke="#ffb4ab" stroke-width="2" width="28" x="826" y="136"></rect>
+<text fill="#ffb4ab" font-family="Material Symbols Outlined" font-size="12" text-anchor="middle" x="840" y="154">account_balance</text>
+<text fill="#e0fdff" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="840" y="176">DE89...3301</text>
+<text fill="#ffb4ab" font-family="Geist" font-size="8.5" text-anchor="middle font-bold" x="840" y="187">FROZEN (SEC-702)</text>
+</g>
+</svg>
+<!-- Selected Node Inspector Drawer (Attached inside visualizer) -->
+<div class="absolute right-4 bottom-4 top-4 w-72 bg-surface-container-high/95 backdrop-blur-md rounded p-space-sm shadow-xl flex flex-col justify-between hidden md:flex">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Node Dossier</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-mono">SELECTED</span>
+</div>
+<div class="font-label-md text-label-md text-primary font-bold">ACC_88491_CYBER_MULE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Owner: Apex Horizon Logistics LLC (Delaware Shell)</div>
+<div class="flex flex-col gap-1 text-on-surface font-label-sm text-label-sm pt-2"><div class="flex justify-between py-1 bg-surface-container rounded px-2 items-center"><span class="text-outline font-medium text-[11px]">Current Ledger Balance:</span><span class="font-mono font-semibold text-primary text-[12px]">$341,200.00</span></div><div class="flex justify-between py-1 bg-surface-container rounded px-2 items-center"><span class="text-outline font-medium text-[11px]">48h Velocity Inflow:</span><span class="font-mono font-semibold text-error text-[12px]">$420,000.00</span></div><div class="flex justify-between py-1 bg-surface-container rounded px-2 items-center"><span class="text-outline font-medium text-[11px]">Graph In-Degree:</span><span class="font-mono font-medium text-secondary text-[12px]">14 Vertices</span></div><div class="flex justify-between py-1 bg-surface-container rounded px-2 items-center"><span class="text-outline font-medium text-[11px]">Graph Out-Degree:</span><span class="font-mono font-medium text-amber-300 text-[12px]">1 (Wire to DE)</span></div></div>
+</div>
+<div class="flex gap-1 pt-2">
+<button class="flex-1 py-1 rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-semibold hover:opacity-90">
+              Isolate Cluster
+            </button>
+<button class="flex-1 py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface font-label-sm text-label-sm">
+              View GSQL
+            </button>
+</div>
+</div>
+</div>
+<!-- Graph Controller Floating HUD -->
+<div class="bg-surface-container-high/90 backdrop-blur-md rounded px-space-md py-space-xs flex flex-wrap items-center justify-between gap-space-md shadow-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">timeline</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface font-semibold">Graph Playback Scrub:</span>
+<span class="font-mono text-primary font-label-sm text-label-sm bg-surface-container-lowest px-2 py-0.5 rounded">T-0 → T+15m (14:02:11)</span>
+</div>
+<div class="flex items-center gap-4 flex-1 max-w-md mx-4">
+<span class="font-label-sm text-label-sm text-outline">Hop-Depth:</span>
+<div class="flex items-center gap-1">
+<button class="w-5 h-5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">1</button>
+<button class="w-5 h-5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">2</button>
+<button class="w-5 h-5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">3</button>
+<button class="w-5 h-5 rounded bg-primary-container text-on-primary-fixed font-bold font-label-sm text-label-sm">4</button>
+<button class="w-5 h-5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">6</button>
+</div>
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">RATE:</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded font-mono">1x REAL</span>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CLIENT-SIDE SIMULATOR SCRIPT FOR REAL-TIME INTERACTION -->
+<script>
+    (function initInvestigateSim() {
+      const btnDenied = document.getElementById('sim-denied');
+      const btnApproved = document.getElementById('sim-approved');
+      const btnTimeout = document.getElementById('sim-timeout');
+      const banner = document.getElementById('sim-response-banner');
+      const runSSEBtn = document.getElementById('btn-run-sse');
+
+      if (!btnDenied || !btnApproved || !btnTimeout || !banner) return;
+
+      btnDenied.addEventListener('click', () => {
+        banner.className = 'bg-error-container/20 rounded p-2 flex items-center gap-2';
+        banner.innerHTML = `
+          <span class="material-symbols-outlined text-error text-[18px]">gpp_bad</span>
+          <div class="font-body-sm text-body-sm text-error">
+            <span class="font-semibold">Customer response:</span> "I did not initiate this $284k wire to Frankfurt!" → <span class="font-bold underline">CONFIRMED ACCOUNT TAKEOVER (ATO)</span>
+          </div>
+        `;
+      });
+
+      btnApproved.addEventListener('click', () => {
+        banner.className = 'bg-emerald-500/20 rounded p-2 flex items-center gap-2';
+        banner.innerHTML = `
+          <span class="material-symbols-outlined text-emerald-400 text-[18px]">verified</span>
+          <div class="font-body-sm text-body-sm text-emerald-300">
+            <span class="font-semibold">Customer response:</span> "Transaction confirmed authorized via FaceID" → <span class="font-bold">LOW RISK LEGITIMATE COMMERCE</span>
+          </div>
+        `;
+      });
+
+      btnTimeout.addEventListener('click', () => {
+        banner.className = 'bg-amber-500/20 rounded p-2 flex items-center gap-2';
+        banner.innerHTML = `
+          <span class="material-symbols-outlined text-amber-400 text-[18px]">hourglass_empty</span>
+          <div class="font-body-sm text-body-sm text-amber-300">
+            <span class="font-semibold">Push timeout:</span> No response within 120s → <span class="font-bold">FALLBACK ESCALATION TO L2 VOICE DESK</span>
+          </div>
+        `;
+      });
+
+      if (runSSEBtn) {
+        runSSEBtn.addEventListener('click', () => {
+          const originalText = runSSEBtn.innerHTML;
+          runSSEBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[16px] animate-spin">refresh</span>
+            <span>STREAMING TG TRACE...</span>
+          `;
+          setTimeout(() => {
+            runSSEBtn.innerHTML = originalText;
+          }, 1400);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="fixed bottom-0 left-64 right-0 h-8 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant/30 z-40 px-space-md flex items-center justify-between text-outline font-label-sm text-label-sm"><div class="flex items-center gap-space-md overflow-hidden whitespace-nowrap"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="text-on-surface">TigerGraph 12-hop Cluster: Healthy (42.1M vertices, 189M edges)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[13px] text-primary">smart_toy</span><span class="">Model: Claude 3.5 Sonnet (Agent Loop)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[13px] text-secondary">memory</span><span class="">GraphRAG Vector Memory: Ready</span></div><span class="text-outline-variant">|</span><span class="">Latency: 18ms</span></div><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 font-semibold tracking-wide uppercase">MOCK SIMULATION MODE (VITE_MOCK=1)</span></div></footer></div>
+
+</body></html>

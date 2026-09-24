@@ -5,7 +5,8 @@ frontend/dist/
 __pycache__/
 *.pyc
 .env
-data/chroma_db/
+data/
+Dataset/
 logs/
 *.egg-info/
 .venv/
