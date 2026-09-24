@@ -3,7 +3,7 @@
   "case": {
     "status": "open",
     "verdict": "uncertain",
-    "fraud_probability": 0.66,
+    "fraud_probability": 0.41,
     "pattern": "none",
     "pattern_description": "",
     "affected_txn_ids": [
@@ -47,23 +47,26 @@
         "entity_ids": [
           "CC-2447"
         ]
+      },
+      {
+        "claim": "Similar case HHG-020: open, pattern=none, exposure=$125.08",
+        "source": "document",
+        "ref": "memory:similar_case(HHG-020)",
+        "entity_ids": [
+          "HHG-020"
+        ]
       }
     ],
     "similar_prior_cases": [
       "CC-2447",
+      "HHG-020",
       "CC-2277"
     ],
-    "summary": "Investigation of case HHG-020 is inconclusive. Fraud probability assessed at 0.66. Additional evidence or analyst review recommended.",
+    "summary": "Investigation of case HHG-020 is inconclusive. Fraud probability assessed at 0.41. Additional evidence or analyst review recommended.",
     "written_to_graph": true,
     "graph_case_id": "CASE-2016-HHG-020"
   },
-  "evidence_requests": [
-    {
-      "type": "customer_validation",
-      "asked_after_step": 5,
-      "assumed_response": "Customer states they did not make this purchase and still has the card."
-    }
-  ],
+  "evidence_requests": [],
   "next_best_actions": {
     "initial": [
       {
@@ -99,7 +102,7 @@
         "reason": "Case opened per policy: probability >= 0.30"
       }
     ],
-    "what_changed": "Additional evidence (customer_validation) changed fraud probability from 0.41 to 0.66."
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
   },
   "sar": {
     "file": false,
@@ -109,8 +112,8 @@
     "total_amount_usd": 125.08,
     "activity_dates": []
   },
-  "stop_reason": "Marginal information gain (0.000) below threshold; unlikely to change decision",
+  "stop_reason": "Investigation should continue",
   "tool_calls": 8,
-  "tokens": 708,
-  "latency_s": 13.34
+  "tokens": 749,
+  "latency_s": 13.26
 }
