@@ -1,0 +1,118 @@
+{
+  "case_id": "HHG-013",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.53,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3526826"
+    ],
+    "first_suspicious_txn_id": "3526826",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Windows | chrome 66.0"
+    ],
+    "exposure_usd": 35.66,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3526826: $35.66, channel=online, risk_score=0.76, email=gmail.com, billing_region=",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3526826)",
+        "entity_ids": [
+          "3526826"
+        ]
+      },
+      {
+        "claim": "Connected device profile: Windows | chrome 66.0 (status: New)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3526826)",
+        "entity_ids": [
+          "Windows | chrome 66.0"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1475: confirmed_fraud, pattern=account_takeover, exposure=$1307.98",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1475)",
+        "entity_ids": [
+          "CC-1475"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3216: confirmed_fraud, pattern=card_not_present_new_device, exposure=$449.97",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3216)",
+        "entity_ids": [
+          "CC-3216"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3761: cleared, pattern=none, exposure=$0.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3761)",
+        "entity_ids": [
+          "CC-3761"
+        ]
+      },
+      {
+        "claim": "Similar case CC-4294: confirmed_fraud, pattern=account_takeover, exposure=$506.01",
+        "source": "document",
+        "ref": "memory:similar_case(CC-4294)",
+        "entity_ids": [
+          "CC-4294"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-4294",
+      "CC-1475",
+      "CC-3761",
+      "CC-3216"
+    ],
+    "summary": "Investigation of case HHG-013 is inconclusive. Fraud probability assessed at 0.53. Additional evidence or analyst review recommended.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-013"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: need customer input"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: need customer input"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 35.66,
+    "activity_dates": []
+  },
+  "stop_reason": "Investigation should continue",
+  "tool_calls": 8,
+  "tokens": 778,
+  "latency_s": 2.91
+}

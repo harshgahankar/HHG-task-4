@@ -1,0 +1,91 @@
+{
+  "case_id": "HHG-006",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3476682"
+    ],
+    "first_suspicious_txn_id": "3476682",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080"
+    ],
+    "exposure_usd": 482.12,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3476682: $482.12, channel=online, risk_score=0.25, email=gmail.com, billing_region=264.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3476682)",
+        "entity_ids": [
+          "3476682"
+        ]
+      },
+      {
+        "claim": "Connected device profile: Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080 (status: New)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3476682)",
+        "entity_ids": [
+          "Trident/7.0 | Windows 7 | ie 11.0 for desktop | 1920x1080"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "summary": "Investigation of case HHG-006 found activity consistent with card_not_present_fraud. Total exposure: $482.12 across 1 transaction(s). Fraud probability assessed at 0.95.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-006"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 482.12,
+    "activity_dates": []
+  },
+  "stop_reason": "Fraud probability at or above 0.85 with sufficient independent evidence",
+  "tool_calls": 8,
+  "tokens": 616,
+  "latency_s": 5.04
+}

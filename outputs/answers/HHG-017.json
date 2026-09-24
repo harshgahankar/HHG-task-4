@@ -1,0 +1,101 @@
+{
+  "case_id": "HHG-017",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.32,
+    "pattern": "none",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3450629"
+    ],
+    "first_suspicious_txn_id": "3450629",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Windows | Windows 10 | chrome 65.0 | 1920x1080"
+    ],
+    "exposure_usd": 100.09,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3450629: $100.09, channel=online, risk_score=0.57, email=anonymous.com, billing_region=204.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3450629)",
+        "entity_ids": [
+          "3450629"
+        ]
+      },
+      {
+        "claim": "Connected device profile: Windows | Windows 10 | chrome 65.0 | 1920x1080 (status: New)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3450629)",
+        "entity_ids": [
+          "Windows | Windows 10 | chrome 65.0 | 1920x1080"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1383: cleared, pattern=none, exposure=$0.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1383)",
+        "entity_ids": [
+          "CC-1383"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-1383"
+    ],
+    "summary": "Investigation of case HHG-017 is inconclusive. Fraud probability assessed at 0.32. Additional evidence or analyst review recommended.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-017"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: uncertain, gather more evidence"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Monitoring while investigating"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: uncertain, gather more evidence"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Monitoring while investigating"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 100.09,
+    "activity_dates": []
+  },
+  "stop_reason": "Investigation should continue",
+  "tool_calls": 8,
+  "tokens": 652,
+  "latency_s": 3.73
+}

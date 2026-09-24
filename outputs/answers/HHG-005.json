@@ -1,0 +1,119 @@
+{
+  "case_id": "HHG-005",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.46,
+    "pattern": "none",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3523199"
+    ],
+    "first_suspicious_txn_id": "3523199",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "iOS Device | iOS 9.3.5 | mobile safari 9.0 | 1024x768"
+    ],
+    "exposure_usd": 100.07,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3523199: $100.07, channel=online, risk_score=0.54, email=icloud.com, billing_region=330.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3523199)",
+        "entity_ids": [
+          "3523199"
+        ]
+      },
+      {
+        "claim": "Connected device profile: iOS Device | iOS 9.3.5 | mobile safari 9.0 | 1024x768 (status: New)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3523199)",
+        "entity_ids": [
+          "iOS Device | iOS 9.3.5 | mobile safari 9.0 | 1024x768"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2400: confirmed_fraud, pattern=account_takeover, exposure=$350.99",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2400)",
+        "entity_ids": [
+          "CC-2400"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2717: confirmed_fraud, pattern=account_takeover, exposure=$896.08",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2717)",
+        "entity_ids": [
+          "CC-2717"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2857: confirmed_fraud, pattern=account_takeover, exposure=$539.97",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2857)",
+        "entity_ids": [
+          "CC-2857"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-2400",
+      "CC-2717",
+      "CC-2857"
+    ],
+    "summary": "Investigation of case HHG-005 is inconclusive. Fraud probability assessed at 0.46. Additional evidence or analyst review recommended.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-005"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: uncertain, gather more evidence"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Monitoring while investigating"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: uncertain, gather more evidence"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Monitoring while investigating"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 100.07,
+    "activity_dates": []
+  },
+  "stop_reason": "Investigation should continue",
+  "tool_calls": 8,
+  "tokens": 752,
+  "latency_s": 11.33
+}

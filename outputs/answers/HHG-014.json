@@ -1,0 +1,91 @@
+{
+  "case_id": "HHG-014",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3478561"
+    ],
+    "first_suspicious_txn_id": "3478561",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "SM-G935F Build/NRD90M | Android 7.0 | chrome 62.0 for android | 1920x1080"
+    ],
+    "exposure_usd": 74.96,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3478561: $74.96, channel=online, risk_score=0.05, email=yahoo.com, billing_region=191.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3478561)",
+        "entity_ids": [
+          "3478561"
+        ]
+      },
+      {
+        "claim": "Connected device profile: SM-G935F Build/NRD90M | Android 7.0 | chrome 62.0 for android | 1920x1080 (status: New)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3478561)",
+        "entity_ids": [
+          "SM-G935F Build/NRD90M | Android 7.0 | chrome 62.0 for android | 1920x1080"
+        ]
+      }
+    ],
+    "similar_prior_cases": [],
+    "summary": "Investigation of case HHG-014 found activity consistent with card_not_present_fraud. Total exposure: $74.96 across 1 transaction(s). Fraud probability assessed at 0.95.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-014"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 74.96,
+    "activity_dates": []
+  },
+  "stop_reason": "Fraud probability at or above 0.85 with sufficient independent evidence",
+  "tool_calls": 8,
+  "tokens": 624,
+  "latency_s": 2.55
+}

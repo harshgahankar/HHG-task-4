@@ -1,0 +1,109 @@
+{
+  "case_id": "HHG-001",
+  "case": {
+    "status": "closed_legitimate",
+    "verdict": "legitimate",
+    "fraud_probability": 0.16,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3514030"
+    ],
+    "first_suspicious_txn_id": "3514030",
+    "connected_card_ids": [],
+    "connected_device_profiles": [],
+    "exposure_usd": 77.07,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3514030: $77.07, channel=in_person, risk_score=0.61, email=, billing_region=444.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3514030)",
+        "entity_ids": [
+          "3514030"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1066: confirmed_fraud, pattern=out_of_region_use, exposure=$170.98",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1066)",
+        "entity_ids": [
+          "CC-1066"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1673: confirmed_fraud, pattern=card_not_present_new_device, exposure=$199.98",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1673)",
+        "entity_ids": [
+          "CC-1673"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2964: confirmed_fraud, pattern=out_of_region_use, exposure=$171.08",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2964)",
+        "entity_ids": [
+          "CC-2964"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3587: confirmed_fraud, pattern=out_of_region_use, exposure=$49.09",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3587)",
+        "entity_ids": [
+          "CC-3587"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-3587",
+      "CC-1673",
+      "CC-1066",
+      "CC-2964"
+    ],
+    "summary": "Investigation of case HHG-001 found no evidence of fraud. Activity is consistent with legitimate cardholder behavior. Fraud probability assessed at 0.16.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-001"
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 5,
+      "assumed_response": "Customer confirms this is their purchase."
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: need customer input"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Default: monitor pending further evidence"
+      }
+    ],
+    "what_changed": "Additional evidence (customer_validation) changed fraud probability from 0.53 to 0.16."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 77.07,
+    "activity_dates": []
+  },
+  "stop_reason": "Marginal information gain (0.000) below threshold; unlikely to change decision",
+  "tool_calls": 8,
+  "tokens": 738,
+  "latency_s": 10.53
+}

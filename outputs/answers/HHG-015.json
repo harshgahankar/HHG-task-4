@@ -1,0 +1,105 @@
+{
+  "case_id": "HHG-015",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.48,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3464869"
+    ],
+    "first_suspicious_txn_id": "3464869",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Trident/7.0 | Windows 8.1 | ie 11.0 for desktop | 1680x1050"
+    ],
+    "exposure_usd": 599.94,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3464869: $599.94, channel=online, risk_score=0.77, email=anonymous.com, billing_region=327.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3464869)",
+        "entity_ids": [
+          "3464869"
+        ]
+      },
+      {
+        "claim": "Connected device profile: Trident/7.0 | Windows 8.1 | ie 11.0 for desktop | 1680x1050 (status: Found)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3464869)",
+        "entity_ids": [
+          "Trident/7.0 | Windows 8.1 | ie 11.0 for desktop | 1680x1050"
+        ]
+      },
+      {
+        "claim": "Similar case CC-0615: confirmed_fraud, pattern=card_not_present_new_device, exposure=$174.99",
+        "source": "document",
+        "ref": "memory:similar_case(CC-0615)",
+        "entity_ids": [
+          "CC-0615"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1313: cleared, pattern=none, exposure=$0.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1313)",
+        "entity_ids": [
+          "CC-1313"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3886: confirmed_fraud, pattern=card_not_present_new_device, exposure=$175.05",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3886)",
+        "entity_ids": [
+          "CC-3886"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-0615",
+      "CC-1313",
+      "CC-3886"
+    ],
+    "summary": "Investigation of case HHG-015 is inconclusive. Fraud probability assessed at 0.48. Additional evidence or analyst review recommended.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-015"
+  },
+  "evidence_requests": [
+    {
+      "type": "analyst_info",
+      "asked_after_step": 5,
+      "assumed_response": "Analyst reports that the customer has not logged into online banking in 30 days, which is unusual for their profile."
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2"
+      }
+    ],
+    "what_changed": "Additional evidence did not significantly change the assessment."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 599.94,
+    "activity_dates": []
+  },
+  "stop_reason": "Marginal information gain (0.000) below threshold; unlikely to change decision",
+  "tool_calls": 8,
+  "tokens": 756,
+  "latency_s": 2.36
+}

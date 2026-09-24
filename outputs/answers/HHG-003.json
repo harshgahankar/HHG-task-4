@@ -1,0 +1,127 @@
+{
+  "case_id": "HHG-003",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3530164"
+    ],
+    "first_suspicious_txn_id": "3530164",
+    "connected_card_ids": [],
+    "connected_device_profiles": [],
+    "exposure_usd": 49.0,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3530164: $49.00, channel=in_person, risk_score=0.40, email=me.com, billing_region=330.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3530164)",
+        "entity_ids": [
+          "3530164"
+        ]
+      },
+      {
+        "claim": "Similar case CC-1589: cleared, pattern=none, exposure=$0.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-1589)",
+        "entity_ids": [
+          "CC-1589"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2817: confirmed_fraud, pattern=out_of_region_use, exposure=$38.96",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2817)",
+        "entity_ids": [
+          "CC-2817"
+        ]
+      },
+      {
+        "claim": "Similar case CC-2935: confirmed_fraud, pattern=out_of_region_use, exposure=$238.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-2935)",
+        "entity_ids": [
+          "CC-2935"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3327: confirmed_fraud, pattern=account_takeover, exposure=$528.69",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3327)",
+        "entity_ids": [
+          "CC-3327"
+        ]
+      },
+      {
+        "claim": "Similar case CC-3682: confirmed_fraud, pattern=out_of_region_use, exposure=$300.51",
+        "source": "document",
+        "ref": "memory:similar_case(CC-3682)",
+        "entity_ids": [
+          "CC-3682"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-2817",
+      "CC-2935",
+      "CC-3682",
+      "CC-1589",
+      "CC-3327"
+    ],
+    "summary": "Investigation of case HHG-003 found activity consistent with card_not_present_fraud. Total exposure: $49.00 across 1 transaction(s). Fraud probability assessed at 0.95.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-003"
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: verify before blocking"
+      },
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Raise monitoring while pending"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "what_changed": "No additional evidence requested; initial evidence was sufficient."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 49.0,
+    "activity_dates": []
+  },
+  "stop_reason": "Investigation should continue",
+  "tool_calls": 8,
+  "tokens": 778,
+  "latency_s": 5.95
+}

@@ -1,0 +1,87 @@
+{
+  "case_id": "HHG-010",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.67,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3506725"
+    ],
+    "first_suspicious_txn_id": "3506725",
+    "connected_card_ids": [],
+    "connected_device_profiles": [
+      "Windows | Windows 10 | edge 16.0 | 1366x768"
+    ],
+    "exposure_usd": 1000.03,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3506725: $1000.03, channel=online, risk_score=0.90, email=anonymous.com, billing_region=469.0",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3506725)",
+        "entity_ids": [
+          "3506725"
+        ]
+      },
+      {
+        "claim": "Connected device profile: Windows | Windows 10 | edge 16.0 | 1366x768 (status: Found)",
+        "source": "graph",
+        "ref": "query:k_hop_neighbors(id=3506725)",
+        "entity_ids": [
+          "Windows | Windows 10 | edge 16.0 | 1366x768"
+        ]
+      },
+      {
+        "claim": "Similar case CC-0873: cleared, pattern=none, exposure=$0.00",
+        "source": "document",
+        "ref": "memory:similar_case(CC-0873)",
+        "entity_ids": [
+          "CC-0873"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-0873"
+    ],
+    "summary": "Investigation of case HHG-010 is inconclusive. Fraud probability assessed at 0.67. Additional evidence or analyst review recommended.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-010"
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 5,
+      "assumed_response": "Customer states they did not make this purchase and still has the card."
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "R2"
+      }
+    ],
+    "what_changed": "Additional evidence (customer_validation) changed fraud probability from 0.42 to 0.67."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 1000.03,
+    "activity_dates": []
+  },
+  "stop_reason": "Marginal information gain (0.000) below threshold; unlikely to change decision",
+  "tool_calls": 8,
+  "tokens": 651,
+  "latency_s": 11.19
+}

@@ -1,0 +1,82 @@
+{
+  "case_id": "HHG-002",
+  "case": {
+    "status": "closed_legitimate",
+    "verdict": "legitimate",
+    "fraud_probability": 0.13,
+    "pattern": "card_not_present_fraud",
+    "pattern_description": "",
+    "affected_txn_ids": [
+      "3478782"
+    ],
+    "first_suspicious_txn_id": "3478782",
+    "connected_card_ids": [],
+    "connected_device_profiles": [],
+    "exposure_usd": 292.36,
+    "evidence": [
+      {
+        "claim": "Flagged transaction 3478782: $292.36, channel=online, risk_score=0.79, email=hotmail.com, billing_region=",
+        "source": "graph",
+        "ref": "query:get_transaction(id=3478782)",
+        "entity_ids": [
+          "3478782"
+        ]
+      },
+      {
+        "claim": "Similar case CC-4160: confirmed_fraud, pattern=card_not_present_fraud, exposure=$90.54",
+        "source": "document",
+        "ref": "memory:similar_case(CC-4160)",
+        "entity_ids": [
+          "CC-4160"
+        ]
+      }
+    ],
+    "similar_prior_cases": [
+      "CC-4160"
+    ],
+    "summary": "Investigation of case HHG-002 found no evidence of fraud. Activity is consistent with legitimate cardholder behavior. Fraud probability assessed at 0.13.",
+    "written_to_graph": true,
+    "graph_case_id": "CASE-2016-HHG-002"
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 5,
+      "assumed_response": "Customer confirms this is their purchase."
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "VERIFY_WITH_CUSTOMER",
+        "route": "auto",
+        "reason": "R1: need customer input"
+      },
+      {
+        "action": "CREATE_CASE",
+        "route": "auto",
+        "reason": "Case opened per policy: probability >= 0.30"
+      }
+    ],
+    "final": [
+      {
+        "action": "MONITOR_CARD",
+        "route": "auto",
+        "reason": "Default: monitor pending further evidence"
+      }
+    ],
+    "what_changed": "Additional evidence (customer_validation) changed fraud probability from 0.44 to 0.13."
+  },
+  "sar": {
+    "file": false,
+    "reason": "SAR not required under current policy thresholds",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 292.36,
+    "activity_dates": []
+  },
+  "stop_reason": "Investigation should continue",
+  "tool_calls": 8,
+  "tokens": 599,
+  "latency_s": 2.83
+}
